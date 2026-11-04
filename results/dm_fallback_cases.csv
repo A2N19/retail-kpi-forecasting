@@ -1,0 +1,4 @@
+source,kernel,loss,h,target,family,model_1,model_2,model,feature_set,variance_status,p_value,p_holm
+ablation,rectangular,se,28,,ablation_vs_A,,,lightgbm,A+aov,fallback_gamma0,0.725648,1.0
+ablation,rectangular,ae,28,,ablation_vs_A,,,random_forest,A+active_customers,fallback_gamma0,0.224742,1.0
+ablation,rectangular,ae,28,,ablation_vs_A,,,random_forest,A+cancellation_rate,fallback_gamma0,0.469259,1.0

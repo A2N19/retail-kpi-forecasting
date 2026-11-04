@@ -1,0 +1,19 @@
+step,seconds
+data_profile,58.3
+cleaning,1.2
+kpis,0.4
+eda,0.7
+eda_figures,0.7
+backtest,374.0
+robustness,0.1
+ablation,241.7
+dm_variance_diagnostics,0.1
+dm_fallback_report,0.0
+figures,0.7
+prediction_figures,0.2
+paper_numbers,0.2
+paper_pdf,1.0
+dm_hln calls: fallback_gamma0,3
+dm_hln calls: ok,1095
+pytest (exit 0),2.4
+TOTAL,681.8

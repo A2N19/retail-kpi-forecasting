@@ -1,0 +1,7 @@
+,revenue,orders,active_customers,aov,cancellation_rate,quantity_sold
+revenue,1.0,0.7932,0.7338,0.6723,0.1401,0.9344
+orders,0.7932,1.0,0.9585,0.1452,0.0297,0.7734
+active_customers,0.7338,0.9585,1.0,0.1008,0.0042,0.7404
+aov,0.6723,0.1452,0.1008,1.0,0.2165,0.6048
+cancellation_rate,0.1401,0.0297,0.0042,0.2165,1.0,0.1255
+quantity_sold,0.9344,0.7734,0.7404,0.6048,0.1255,1.0

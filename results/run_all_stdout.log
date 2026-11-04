@@ -1,0 +1,527 @@
+﻿
+===== data_profile =====
+                                   metric                                                                                                                                                                                                                                                                                                                                                                              value                                                         note
+                             n_rows_total                                                                                                                                                                                                                                                                                                                                                                            1067371                                                             
+             n_rows_sheet[Year 2009-2010]                                                                                                                                                                                                                                                                                                                                                                             525461                                                             
+             n_rows_sheet[Year 2010-2011]                                                                                                                                                                                                                                                                                                                                                                             541910                                                             
+                                 date_min                                                                                                                                                                                                                                                                                                                                                                2009-12-01 07:45:00                                                             
+                                 date_max                                                                                                                                                                                                                                                                                                                                                                2011-12-09 12:50:00                                                             
+         date_range_sheet[Year 2009-2010]                                                                                                                                                                                                                                                                                                                                         2009-12-01 07:45:00 .. 2010-12-09 20:01:00                                                             
+         date_range_sheet[Year 2010-2011]                                                                                                                                                                                                                                                                                                                                         2010-12-01 08:26:00 .. 2011-12-09 12:50:00                                                             
+                        n_invoices_unique                                                                                                                                                                                                                                                                                                                                                                              53628                                                             
+                      n_stockcodes_unique                                                                                                                                                                                                                                                                                                                                                                               5305                                                             
+                              n_countries                                                                                                                                                                                                                                                                                                                                                                                 43                                                             
+                            share_rows_uk                                                                                                                                                                                                                                                                                                                                                                             0.9194                                                             
+                          n_calendar_days                                                                                                                                                                                                                                                                                                                                                                                739                       first..last transaction date inclusive
+                           n_trading_days                                                                                                                                                                                                                                                                                                                                                                                604                                days with >= 1 row (any type)
+                  n_missing_calendar_days                                                                                                                                                                                                                                                                                                                                                                                135                                                             
+                     trading_days[Monday]                                                                                                                                                                                                                                                                                                                                                                                 94                                                             
+                     missing_days[Monday]                                                                                                                                                                                                                                                                                                                                                                                 11                                                             
+                    trading_days[Tuesday]                                                                                                                                                                                                                                                                                                                                                                                104                                                             
+                    missing_days[Tuesday]                                                                                                                                                                                                                                                                                                                                                                                  2                                                             
+                  trading_days[Wednesday]                                                                                                                                                                                                                                                                                                                                                                                104                                                             
+                  missing_days[Wednesday]                                                                                                                                                                                                                                                                                                                                                                                  2                                                             
+                   trading_days[Thursday]                                                                                                                                                                                                                                                                                                                                                                                103                                                             
+                   missing_days[Thursday]                                                                                                                                                                                                                                                                                                                                                                                  3                                                             
+                     trading_days[Friday]                                                                                                                                                                                                                                                                                                                                                                                 99                                                             
+                     missing_days[Friday]                                                                                                                                                                                                                                                                                                                                                                                  7                                                             
+                   trading_days[Saturday]                                                                                                                                                                                                                                                                                                                                                                                  1                                                             
+                   missing_days[Saturday]                                                                                                                                                                                                                                                                                                                                                                                104                                                             
+                     trading_days[Sunday]                                                                                                                                                                                                                                                                                                                                                                                 99                                                             
+                     missing_days[Sunday]                                                                                                                                                                                                                                                                                                                                                                                  6                                                             
+                          n_rows_saturday                                                                                                                                                                                                                                                                                                                                                                                402                                                             
+                           saturday_dates                                                                                                                                                                                                                                                                                                                                                                         2009-12-05                                                             
+                               n_gap_runs                                                                                                                                                                                                                                                                                                                                                                                108                                                             
+               gap_runs_longer_than_1_day                                                                                                                                                                                                                                  2009-12-24..2010-01-03 (11d); 2010-04-02..2010-04-05 (4d); 2010-12-24..2011-01-03 (11d); 2011-04-22..2011-04-25 (4d); 2011-04-29..2011-04-30 (2d)                                see results/calendar_gaps.csv
+              n_missing_non_saturday_days                                                                                                                                                                                                                                                                                                                                                                                 31                                                             
+               missing_non_saturday_dates 2009-12-24, 2009-12-25, 2009-12-27, 2009-12-28, 2009-12-29, 2009-12-30, 2009-12-31, 2010-01-01, 2010-01-03, 2010-04-02, 2010-04-04, 2010-04-05, 2010-05-03, 2010-05-31, 2010-08-30, 2010-12-24, 2010-12-26, 2010-12-27, 2010-12-28, 2010-12-29, 2010-12-30, 2010-12-31, 2011-01-02, 2011-01-03, 2011-04-22, 2011-04-24, 2011-04-25, 2011-04-29, 2011-05-02, 2011-05-30, 2011-08-29                                                             
+               n_rows_missing_customer_id                                                                                                                                                                                                                                                                                                                                                                             243007                                                             
+           share_rows_missing_customer_id                                                                                                                                                                                                                                                                                                                                                                             0.2277                                                             
+    share_net_revenue_missing_customer_id                                                                                                                                                                                                                                                                                                                                                                             0.1368                          net = sum(Quantity*Price), all rows
+           n_rows_invoice_prefix[<digit>]                                                                                                                                                                                                                                                                                                                                                                            1047871                                                             
+                 n_rows_invoice_prefix[C]                                                                                                                                                                                                                                                                                                                                                                              19494                                                             
+                 n_rows_invoice_prefix[A]                                                                                                                                                                                                                                                                                                                                                                                  6                                                             
+                    n_rows_cancellation_C                                                                                                                                                                                                                                                                                                                                                                              19494                                                             
+                share_rows_cancellation_C                                                                                                                                                                                                                                                                                                                                                                             0.0183                                                             
+                n_invoices_cancellation_C                                                                                                                                                                                                                                                                                                                                                                               8292                                                             
+            share_invoices_cancellation_C                                                                                                                                                                                                                                                                                                                                                                             0.1546                                                             
+               cancellation_C_revenue_sum                                                                                                                                                                                                                                                                                                                                                                        -1526667.86                                                             
+                     n_rows_quantity_le_0                                                                                                                                                                                                                                                                                                                                                                              22950                                                             
+                     n_rows_quantity_lt_0                                                                                                                                                                                                                                                                                                                                                                              22950                                                             
+                     n_rows_quantity_eq_0                                                                                                                                                                                                                                                                                                                                                                                  0                                                             
+               n_rows_quantity_le_0_not_C                                                                                                                                                                                                                                                                                                                                                                               3457                               negative qty without C invoice
+               n_rows_quantity_gt_0_and_C                                                                                                                                                                                                                                                                                                                                                                                  1                                                             
+                        n_rows_price_le_0                                                                                                                                                                                                                                                                                                                                                                               6207                                                             
+                        n_rows_price_lt_0                                                                                                                                                                                                                                                                                                                                                                                  5                                                             
+                        n_rows_price_eq_0                                                                                                                                                                                                                                                                                                                                                                               6202                                                             
+   n_rows_price_eq_0_and_missing_customer                                                                                                                                                                                                                                                                                                                                                                               6131                                                             
+               n_rows_missing_description                                                                                                                                                                                                                                                                                                                                                                               4382                                                             
+n_rows_quantity_le_0_not_C_and_price_eq_0                                                                                                                                                                                                                                                                                                                                                                               3457                                                             
+             n_rows_stockcode_nonstandard                                                                                                                                                                                                                                                                                                                                                                               6093                                not matching ^\d{5}[A-Za-z]*$
+                 n_stockcodes_nonstandard                                                                                                                                                                                                                                                                                                                                                                                 62                                                             
+        net_revenue_stockcode_nonstandard                                                                                                                                                                                                                                                                                                                                                                          -95225.44                                                             
+                    n_full_duplicate_rows                                                                                                                                                                                                                                                                                                                                                                              34335 all 8 data columns identical; first occurrence kept in count
+       n_full_duplicate_rows_within_sheet                                                                                                                                                                                                                                                                                                                                                                              12133                                                             
+   n_full_duplicate_rows_cross_sheet_only                                                                                                                                                                                                                                                                                                                                                                              22202                                                             
+            net_revenue_in_duplicate_rows                                                                                                                                                                                                                                                                                                                                                                          431716.87                                                             
+                     net_revenue_all_rows                                                                                                                                                                                                                                                                                                                                                                        19287250.57                                              before cleaning
+                    daily_net_revenue_min                                                                                                                                                                                                                                                                                                                                                                          -22212.61                                       raw, trading days only
+                    daily_net_revenue_max                                                                                                                                                                                                                                                                                                                                                                          117271.12                                       raw, trading days only
+          n_trading_days_net_revenue_le_0                                                                                                                                                                                                                                                                                                                                                                                  4                                                          raw
+
+===== cleaning =====
+step action                                                                                                              description  n_rows_before  n_rows_removed  n_rows_after  net_revenue_removed  n_rows_flagged   date_run
+  R1   drop                                                                            Drop sheet 2009-2010 rows dated >= 2010-12-01        1067371           22523       1044848            377488.45             NaN 2026-11-03
+  R2   drop                                                               Drop exact duplicate rows (all 8 data columns), keep first        1044848           11812       1033036             54228.42             NaN 2026-11-03
+  R3   drop                                                                          Drop invoices with prefix A ('Adjust bad debt')        1033036               6       1033030           -147614.08             NaN 2026-11-03
+  R4   drop                                                                                                Drop rows with Price <= 0        1033030            6014       1027016                 0.00             NaN 2026-11-03
+  R5   drop Drop accounting / fee / test StockCodes: ADJUST, ADJUST2, AMAZONFEE, B, BANK CHARGES, CRUK, D, M, S, TEST001, TEST002, m        1027016            1895       1025121           -359348.41             NaN 2026-11-03
+  R6   drop                                                                    Drop postage / carriage StockCodes: C2, C3, DOT, POST        1025121            3771       1021350            433410.51             NaN 2026-11-03
+  R7   drop                                 Drop orders with Quantity >= 50,000 together with their exact same-customer cancellation        1021350               4       1021346                 0.00             NaN 2026-11-03
+  R8   flag                                                              Keep cancellations (Invoice prefix C), flag is_cancellation        1021346               0       1021346                 0.00         17914.0 2026-11-03
+  R9   flag                                                                                       Keep rows with missing Customer ID        1021346               0       1021346                 0.00        227167.0 2026-11-03
+
+===== kpis =====
+daily table: 2009-12-01 .. 2011-12-08, 738 days
+                               count        mean         std       min         25%         50%         75%          max  n_zero  n_nan
+kpi                                                                                                                                   
+revenue                        738.0  26247.0726  19581.9858    0.0000  14334.6250  24948.4550  35806.3575  111348.6100   135.0    0.0
+orders                         738.0     53.4837     33.6177    0.0000     36.0000     56.0000     74.0000     151.0000   135.0    0.0
+active_customers               738.0     44.5014     28.0692    0.0000     30.0000     47.0000     61.0000     132.0000   135.0    0.0
+aov                            603.0    485.6602    170.5793  228.0748    375.6090    446.7852    540.3489    1553.6360     0.0  135.0
+cancellation_rate              603.0      0.1467      0.0963    0.0000      0.0732      0.1250      0.2029       0.5152     6.0  135.0
+quantity_sold                  738.0  14932.2331  12452.5623    0.0000   8119.2500  13943.0000  20316.7500  125468.0000   135.0    0.0
+revenue_per_customer           603.0    511.6813    191.4044  248.3475    395.3129    464.5537    571.1942    1948.6855     0.0  135.0
+calendar                       738.0         NaN         NaN       NaN         NaN         NaN         NaN          NaN     NaN    NaN
+trading_days                   603.0         NaN         NaN       NaN         NaN         NaN         NaN          NaN     NaN    NaN
+saturday_trading_days            1.0         NaN         NaN       NaN         NaN         NaN         NaN          NaN     NaN    NaN
+non_saturday_non_trading_days   31.0         NaN         NaN       NaN         NaN         NaN         NaN          NaN     NaN    NaN
+
+===== eda =====
+series         calendar_7day  no_saturdays_6day  trading_days_only
+stat                                                              
+acf_lag1              0.4218             0.4681             0.3926
+acf_lag12            -0.0126             0.3745             0.4534
+acf_lag13             0.2533             0.2391             0.2675
+acf_lag14             0.5475             0.1584             0.2181
+acf_lag5              0.0714             0.3730             0.3556
+acf_lag6              0.3513             0.4942             0.5005
+acf_lag7              0.6375             0.2985             0.2696
+naive1_mae        15830.3800         13130.6600         13368.5700
+snaive_mae_m6     16850.0000         12340.9100         11570.4900
+snaive_mae_m7     10598.5700         15387.3700         14609.8600
+             n_days  n_trading  mean_revenue  median_revenue  mean_orders
+day_of_week                                                              
+0               105         94      32543.77        27746.68        59.48
+1               106        104      35879.60        30108.14        67.42
+2               106        104      31845.12        28762.10        67.12
+3               106        103      37835.33        33788.48        77.05
+4               105         98      28275.25        25817.06        56.61
+5               105          1         93.36            0.00         0.29
+6               105         99      17001.66        16867.83        45.94
+                   sum      mean  count
+date                                   
+2009-12-01   798118.53  25745.76     31
+2010-01-01   612365.50  19753.73     31
+2010-02-01   537926.70  19211.67     28
+2010-03-01   761748.53  24572.53     31
+2010-04-01   646451.56  21548.39     30
+2010-05-01   643585.64  20760.83     31
+2010-06-01   696651.27  23221.71     30
+2010-07-01   633079.42  20421.92     31
+2010-08-01   674192.89  21748.16     31
+2010-09-01   869277.16  28975.91     30
+2010-10-01  1094563.63  35308.50     31
+2010-11-01  1429751.84  47658.39     30
+2010-12-01   775714.95  25023.06     31
+2011-01-01   593255.86  19137.29     31
+2011-02-01   507866.54  18138.09     28
+2011-03-01   689841.84  22252.96     31
+2011-04-01   515469.66  17182.32     30
+2011-05-01   740036.33  23872.14     31
+2011-06-01   737683.99  24589.47     30
+2011-07-01   688252.67  22201.70     31
+2011-08-01   724308.16  23364.78     31
+2011-09-01  1028345.38  34278.18     30
+2011-10-01  1103330.92  35591.32     31
+2011-11-01  1452115.98  48403.87     30
+2011-12-01   416404.61  52050.58      8
+
+===== eda_figures =====
+                   revenue  orders  active_customers   aov  cancellation_rate  quantity_sold
+revenue               1.00    0.79              0.73  0.67               0.14           0.93
+orders                0.79    1.00              0.96  0.15               0.03           0.77
+active_customers      0.73    0.96              1.00  0.10               0.00           0.74
+aov                   0.67    0.15              0.10  1.00               0.22           0.60
+cancellation_rate     0.14    0.03              0.00  0.22               1.00           0.13
+quantity_sold         0.93    0.77              0.74  0.60               0.13           1.00
+           driver  lag   n  spearman_with_revenue
+           orders    1 494                  0.455
+           orders    7 573                  0.542
+ active_customers    1 494                  0.457
+ active_customers    7 573                  0.515
+              aov    1 494                  0.125
+              aov    7 573                  0.274
+cancellation_rate    1 494                 -0.051
+cancellation_rate    7 573                  0.109
+          revenue    1 494                  0.392
+          revenue    7 573                  0.537
+   winter closure_start closure_end  closure_days last_trading_day  mean_rev_5_trading_days_before first_trading_day_after  mean_rev_5_trading_days_after  non_saturday_zero_days_in_window
+2009/2010    2009-12-24  2010-01-03            11       2009-12-23                        20810.72              2010-01-04                       28504.99                                 9
+2010/2011    2010-12-24  2011-01-03            11       2010-12-23                        18513.62              2011-01-04                       26063.44                                 9
+
+===== backtest =====
+[08:02:36] test 2011-02-07..2011-12-08 (305 days), targets ['revenue', 'orders', 'active_customers']
+[08:02:36] revenue: statistical models
+[08:02:48] revenue: ML h=1 set=A
+[08:03:06] revenue: ML h=1 set=B
+[08:03:26] revenue: ML h=7 set=A
+[08:03:44] revenue: ML h=7 set=B
+[08:04:04] revenue: ML h=28 set=A
+[08:04:22] revenue: ML h=28 set=B
+[08:04:41] orders: statistical models
+[08:04:46] orders: ML h=1 set=A
+[08:05:04] orders: ML h=1 set=B
+[08:05:24] orders: ML h=7 set=A
+[08:05:41] orders: ML h=7 set=B
+[08:06:01] orders: ML h=28 set=A
+[08:06:19] orders: ML h=28 set=B
+[08:06:38] active_customers: statistical models
+[08:06:43] active_customers: ML h=1 set=A
+[08:07:00] active_customers: ML h=1 set=B
+[08:07:21] active_customers: ML h=7 set=A
+[08:07:38] active_customers: ML h=7 set=B
+[08:07:58] active_customers: ML h=28 set=A
+[08:08:16] active_customers: ML h=28 set=B
+[08:08:35] leakage control h=1
+[08:08:40] leakage control h=7
+[08:08:44] leakage control h=28
+[08:08:50] done in 6.2 min
+
+===== robustness =====
+se n 27 B better sig 0 B worse sig 0
+ae n 27 B better sig 0 B worse sig 0
+Empty DataFrame
+Columns: [target, h, loss, model_1, p_holm]
+Index: []
+
+===== ablation =====
+[08:08:50] ablation h=1 set=A
+[08:09:03] ablation h=1 set=A+orders
+[08:09:16] ablation h=1 set=A+active_customers
+[08:09:29] ablation h=1 set=A+aov
+[08:09:43] ablation h=1 set=A+cancellation_rate
+[08:09:56] ablation h=1 set=B
+[08:10:11] ablation h=7 set=A
+[08:10:24] ablation h=7 set=A+orders
+[08:10:37] ablation h=7 set=A+active_customers
+[08:10:50] ablation h=7 set=A+aov
+[08:11:03] ablation h=7 set=A+cancellation_rate
+[08:11:17] ablation h=7 set=B
+[08:11:32] ablation h=28 set=A
+[08:11:44] ablation h=28 set=A+orders
+[08:11:57] ablation h=28 set=A+active_customers
+[08:12:11] ablation h=28 set=A+aov
+[08:12:24] ablation h=28 set=A+cancellation_rate
+[08:12:37] ablation h=28 set=B
+[08:12:51] determinism check: 5490 forecasts compared, max |diff| = 2.910e-11
+.\.venv\Scripts\python.exe : WARNING evaluate.dm_hln: DM variance <= 0 (h=28, loss=se, kernel=rectangular, n=305, var=-
+1.9675e+12); using gamma_0/n
+At line:1 char:450
++ ... A256).Hash; .\.venv\Scripts\python.exe run_all.py *> results\run_all_ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING evaluat...using gamma_0/n:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING evaluate.dm_hln: DM variance <= 0 (h=28, loss=ae, kernel=rectangular, n=305, var=-796.363); using gamma_0/n
+WARNING evaluate.dm_hln: DM variance <= 0 (h=28, loss=ae, kernel=rectangular, n=305, var=-643.63); using gamma_0/n
+ h         model         feature_set   mase  mase_change_vs_A_pct  p_holm_se  p_holm_ae  p_holm_se_bartlett  p_holm_ae_bartlett
+ 1      lightgbm                   A 0.8492                0.0000        NaN        NaN                 NaN                 NaN
+ 1      lightgbm  A+active_customers 0.8395               -1.1486     1.0000     1.0000              1.0000              1.0000
+ 1      lightgbm               A+aov 0.8228               -3.1063     1.0000     1.0000              1.0000              1.0000
+ 1      lightgbm A+cancellation_rate 0.8755                3.1003     1.0000     1.0000              1.0000              1.0000
+ 1      lightgbm            A+orders 0.8240               -2.9664     1.0000     1.0000              1.0000              1.0000
+ 1      lightgbm                   B 0.8333               -1.8676     1.0000     1.0000              1.0000              1.0000
+ 1 random_forest                   A 0.7524                0.0000        NaN        NaN                 NaN                 NaN
+ 1 random_forest  A+active_customers 0.7439               -1.1327     1.0000     1.0000              1.0000              1.0000
+ 1 random_forest               A+aov 0.7566                0.5603     1.0000     1.0000              1.0000              1.0000
+ 1 random_forest A+cancellation_rate 0.7738                2.8453     1.0000     0.1365              1.0000              0.1365
+ 1 random_forest            A+orders 0.7483               -0.5384     1.0000     1.0000              1.0000              1.0000
+ 1 random_forest                   B 0.7550                0.3493     1.0000     1.0000              1.0000              1.0000
+ 1         ridge                   A 0.7961                0.0000        NaN        NaN                 NaN                 NaN
+ 1         ridge  A+active_customers 0.7914               -0.5869     1.0000     1.0000              1.0000              1.0000
+ 1         ridge               A+aov 0.7854               -1.3367     1.0000     0.4912              1.0000              0.4912
+ 1         ridge A+cancellation_rate 0.7979                0.2363     1.0000     1.0000              1.0000              1.0000
+ 1         ridge            A+orders 0.7912               -0.6126     1.0000     1.0000              1.0000              1.0000
+ 1         ridge                   B 0.7917               -0.5496     1.0000     1.0000              1.0000              1.0000
+ 7      lightgbm                   A 0.7990                0.0000        NaN        NaN                 NaN                 NaN
+ 7      lightgbm  A+active_customers 0.8084                1.1700     1.0000     1.0000              1.0000              1.0000
+ 7      lightgbm               A+aov 0.7903               -1.0929     1.0000     1.0000              1.0000              1.0000
+ 7      lightgbm A+cancellation_rate 0.7761               -2.8639     1.0000     1.0000              1.0000              1.0000
+ 7      lightgbm            A+orders 0.8038                0.6040     1.0000     1.0000              1.0000              1.0000
+ 7      lightgbm                   B 0.7731               -3.2373     1.0000     1.0000              1.0000              1.0000
+ 7 random_forest                   A 0.7561                0.0000        NaN        NaN                 NaN                 NaN
+ 7 random_forest  A+active_customers 0.7474               -1.1476     1.0000     1.0000              1.0000              1.0000
+ 7 random_forest               A+aov 0.7459               -1.3492     1.0000     1.0000              1.0000              1.0000
+ 7 random_forest A+cancellation_rate 0.7716                2.0592     1.0000     0.7757              1.0000              0.9472
+ 7 random_forest            A+orders 0.7539               -0.2871     1.0000     1.0000              1.0000              1.0000
+ 7 random_forest                   B 0.7557               -0.0491     1.0000     1.0000              1.0000              1.0000
+ 7         ridge                   A 0.7990                0.0000        NaN        NaN                 NaN                 NaN
+ 7         ridge  A+active_customers 0.8048                0.7269     1.0000     1.0000              1.0000              1.0000
+ 7         ridge               A+aov 0.7874               -1.4511     1.0000     1.0000              1.0000              1.0000
+ 7         ridge A+cancellation_rate 0.8061                0.8792     1.0000     1.0000              1.0000              1.0000
+ 7         ridge            A+orders 0.7966               -0.3088     1.0000     1.0000              1.0000              1.0000
+ 7         ridge                   B 0.8038                0.6008     1.0000     1.0000              1.0000              1.0000
+28      lightgbm                   A 0.7873                0.0000        NaN        NaN                 NaN                 NaN
+28      lightgbm  A+active_customers 0.8129                3.2575     1.0000     0.7736              1.0000              1.0000
+28      lightgbm               A+aov 0.7886                0.1639     1.0000     1.0000              1.0000              1.0000
+28      lightgbm A+cancellation_rate 0.7998                1.5921     1.0000     1.0000              1.0000              1.0000
+28      lightgbm            A+orders 0.7874                0.0102     1.0000     1.0000              1.0000              1.0000
+28      lightgbm                   B 0.7850               -0.2928     1.0000     1.0000              1.0000              1.0000
+28 random_forest                   A 0.7578                0.0000        NaN        NaN                 NaN                 NaN
+28 random_forest  A+active_customers 0.7703                1.6443     1.0000     1.0000              1.0000              1.0000
+28 random_forest               A+aov 0.7716                1.8209     0.2239     1.0000              1.0000              1.0000
+28 random_forest A+cancellation_rate 0.7641                0.8258     0.0000     1.0000              1.0000              1.0000
+28 random_forest            A+orders 0.7560               -0.2405     1.0000     1.0000              1.0000              1.0000
+28 random_forest                   B 0.7686                1.4224     0.0710     0.2937              1.0000              1.0000
+28         ridge                   A 0.8183                0.0000        NaN        NaN                 NaN                 NaN
+28         ridge  A+active_customers 0.8104               -0.9599     0.0419     1.0000              0.4496              1.0000
+28         ridge               A+aov 0.8140               -0.5203     1.0000     1.0000              1.0000              1.0000
+28         ridge A+cancellation_rate 0.8153               -0.3664     1.0000     1.0000              1.0000              1.0000
+28         ridge            A+orders 0.8107               -0.9254     0.2724     1.0000              1.0000              1.0000
+28         ridge                   B 0.8264                0.9920     1.0000     1.0000              1.0000              1.0000
+[08:12:51] done in 4.0 min
+
+===== dm_variance_diagnostics =====
+    n_tests  share_rect_below_bartlett  ratio_rect_min  ratio_rect_median  ratio_bartlett_min  ratio_bartlett_median  n_rect_nonpositive  share_rect_below_0_5
+h                                                                                                                                                             
+1        66                      0.000           1.000              1.000               1.000                  1.000                   0                 0.000
+7        66                      0.303           0.516              1.315               0.789                  1.281                   0                 0.000
+28       66                      0.576          -0.073              1.444               0.455                  1.692                   1                 0.121
+
+===== dm_fallback_report =====
+    n_tests  n_fallback_gamma0  n_zero_variance
+h                                              
+1       366                  0                0
+7       366                  0                0
+28      366                  3                0
+  source      kernel loss  h target        family model_1 model_2         model         feature_set variance_status  p_value  p_holm
+ablation rectangular   se 28    NaN ablation_vs_A     NaN     NaN      lightgbm               A+aov fallback_gamma0 0.725648     1.0
+ablation rectangular   ae 28    NaN ablation_vs_A     NaN     NaN random_forest  A+active_customers fallback_gamma0 0.224742     1.0
+ablation rectangular   ae 28    NaN ablation_vs_A     NaN     NaN random_forest A+cancellation_rate fallback_gamma0 0.469259     1.0
+
+===== figures =====
+figures written
+
+===== prediction_figures =====
+ h         model feature_set   mase       mae   wape model_runner_up feature_set_runner_up  mase_runner_up
+ 1 random_forest           A 0.7524 7813.8670 0.2802   random_forest                     B          0.7550
+ 7 random_forest           B 0.7557 7853.8745 0.2817   random_forest                     A          0.7561
+28 random_forest           A 0.7578 7885.8221 0.2828   random_forest                     B          0.7686
+
+===== paper_numbers =====
+                                                       key            value                     source
+                                                  raw_rows          1067371           data_profile.csv
+                                missing_cust_rev_share_pct             13.7           data_profile.csv
+                                              overlap_rows            22523           cleaning_log.csv
+                                                clean_rows          1021346           cleaning_log.csv
+                                               cancel_rows            17914           cleaning_log.csv
+                                             calendar_days              738     daily_kpis_summary.csv
+                                              trading_days              603     daily_kpis_summary.csv
+                                          sat_trading_days                1     daily_kpis_summary.csv
+                                                rev_median          24948.0     daily_kpis_summary.csv
+                                                      acf7             0.64        eda_seasonality.csv
+                                             snaive_mae_m7          10599.0        eda_seasonality.csv
+                                             snaive_mae_m6          16850.0        eda_seasonality.csv
+                                                naive1_mae          15830.0        eda_seasonality.csv
+                                                 test_days              305                metrics.csv
+                              mase_rev_seasonal_naive_-_h1            0.981                metrics.csv
+                                         mase_rev_ets_-_h1            0.872                metrics.csv
+                                      mase_rev_sarima_-_h1            0.838                metrics.csv
+                               mase_rev_random_forest_A_h1            0.752                metrics.csv
+                               mase_rev_random_forest_B_h1            0.755                metrics.csv
+                                       mase_rev_ridge_A_h1            0.796                metrics.csv
+                                    mase_rev_lightgbm_A_h1            0.849                metrics.csv
+                                    mase_rev_lightgbm_B_h1            0.833                metrics.csv
+                                      mase_rev_nosat_sn_h1            1.142                metrics.csv
+                                  mase_rev_nosat_ridgeA_h1            0.851                metrics.csv
+                                     mase_rev_nosat_rfA_h1            0.875                metrics.csv
+                              mase_rev_seasonal_naive_-_h7             0.98                metrics.csv
+                                         mase_rev_ets_-_h7            0.915                metrics.csv
+                                      mase_rev_sarima_-_h7            0.861                metrics.csv
+                               mase_rev_random_forest_A_h7            0.756                metrics.csv
+                               mase_rev_random_forest_B_h7            0.756                metrics.csv
+                                       mase_rev_ridge_A_h7            0.799                metrics.csv
+                                    mase_rev_lightgbm_A_h7            0.799                metrics.csv
+                                    mase_rev_lightgbm_B_h7            0.773                metrics.csv
+                                      mase_rev_nosat_sn_h7            1.141                metrics.csv
+                                  mase_rev_nosat_ridgeA_h7            0.868                metrics.csv
+                                     mase_rev_nosat_rfA_h7            0.879                metrics.csv
+                             mase_rev_seasonal_naive_-_h28            1.065                metrics.csv
+                                        mase_rev_ets_-_h28             0.92                metrics.csv
+                                     mase_rev_sarima_-_h28             0.96                metrics.csv
+                              mase_rev_random_forest_A_h28            0.758                metrics.csv
+                              mase_rev_random_forest_B_h28            0.769                metrics.csv
+                                      mase_rev_ridge_A_h28            0.818                metrics.csv
+                                   mase_rev_lightgbm_A_h28            0.787                metrics.csv
+                                   mase_rev_lightgbm_B_h28            0.785                metrics.csv
+                                     mase_rev_nosat_sn_h28             1.24                metrics.csv
+                                 mase_rev_nosat_ridgeA_h28             0.87                metrics.csv
+                                    mase_rev_nosat_rfA_h28            0.881                metrics.csv
+                                               best_rev_h1 random_forest[A]                metrics.csv
+                                               best_rev_h7 random_forest[B]                metrics.csv
+                                              best_rev_h28 random_forest[A]                metrics.csv
+                                           wape_rev_rfA_h1             0.28                metrics.csv
+                                           wape_rev_rfA_h7            0.282                metrics.csv
+                                          wape_rev_rfA_h28            0.283                metrics.csv
+                                            n_sig_vs_sn_h1                8               dm_tests.csv
+                                                n_vs_sn_h1                8               dm_tests.csv
+                                           n_sig_vs_ets_h1                0               dm_tests.csv
+                                        n_rawsig_vs_ets_h1                4               dm_tests.csv
+                                               n_vs_ets_h1                6               dm_tests.csv
+                                            n_sig_vs_sn_h7                8               dm_tests.csv
+                                                n_vs_sn_h7                8               dm_tests.csv
+                                           n_sig_vs_ets_h7                0               dm_tests.csv
+                                        n_rawsig_vs_ets_h7                5               dm_tests.csv
+                                               n_vs_ets_h7                6               dm_tests.csv
+                                           n_sig_vs_sn_h28                7               dm_tests.csv
+                                               n_vs_sn_h28                8               dm_tests.csv
+                                          n_sig_vs_ets_h28                6               dm_tests.csv
+                                       n_rawsig_vs_ets_h28                6               dm_tests.csv
+                                              n_vs_ets_h28                6               dm_tests.csv
+                                   p_holm_sarima_vs_sn_h28            0.106               dm_tests.csv
+                                               n_b_vs_a_se               27               dm_tests.csv
+                                         n_b_better_sig_se                0               dm_tests.csv
+                                          n_b_worse_sig_se                1               dm_tests.csv
+                                               n_b_vs_a_ae               27               dm_tests.csv
+                                         n_b_better_sig_ae                0               dm_tests.csv
+                                          n_b_worse_sig_ae                0               dm_tests.csv
+                                         n_b_vs_a_nosat_se               27  dm_tests_no_saturdays.csv
+                                      n_b_sig_any_nosat_se                0  dm_tests_no_saturdays.csv
+                                         n_b_vs_a_nosat_ae               27  dm_tests_no_saturdays.csv
+                                      n_b_sig_any_nosat_ae                0  dm_tests_no_saturdays.csv
+                                            p_holm_rf28_se            0.016               dm_tests.csv
+                                            p_holm_rf28_ae            0.059               dm_tests.csv
+                                        rel_b_vs_a_min_pct             -3.2                metrics.csv
+                                        rel_b_vs_a_max_pct              4.1                metrics.csv
+                                    rel_b_vs_a_rev_min_pct             -3.2                metrics.csv
+                                    rel_b_vs_a_rev_max_pct              1.4                metrics.csv
+                                             leak_mase_min             0.16        leakage_control.csv
+                                             leak_mase_max             0.24        leakage_control.csv
+                                            legal_mase_min             0.77        leakage_control.csv
+                                            legal_mase_max             0.83        leakage_control.csv
+                                            leak_ratio_min              3.4        leakage_control.csv
+                                            leak_ratio_max              4.8        leakage_control.csv
+                                         leak_wape_lgbm_h1            0.068        leakage_control.csv
+                                        legal_wape_lgbm_h1            0.311        leakage_control.csv
+                                     shap_drivers_B_h1_pct             48.0            shap_groups.csv
+                                    shap_calendar_B_h1_pct             14.0            shap_groups.csv
+                                    shap_calendar_A_h1_pct             26.0            shap_groups.csv
+                                     shap_ownlags_A_h1_pct             54.0            shap_groups.csv
+                                     shap_drivers_B_h7_pct             44.0            shap_groups.csv
+                                    shap_calendar_B_h7_pct             23.0            shap_groups.csv
+                                    shap_calendar_A_h7_pct             33.0            shap_groups.csv
+                                     shap_ownlags_A_h7_pct             48.0            shap_groups.csv
+                                    shap_drivers_B_h28_pct             41.0            shap_groups.csv
+                                   shap_calendar_B_h28_pct             27.0            shap_groups.csv
+                                   shap_calendar_A_h28_pct             39.0            shap_groups.csv
+                                    shap_ownlags_A_h28_pct             49.0            shap_groups.csv
+                                      perm_top_lightgbm_h1         calendar permutation_importance.csv
+                                      perm_top_lightgbm_h7         calendar permutation_importance.csv
+                                     perm_top_lightgbm_h28         calendar permutation_importance.csv
+                                         perm_top_ridge_h1         calendar permutation_importance.csv
+                                         perm_top_ridge_h7         calendar permutation_importance.csv
+                                        perm_top_ridge_h28         calendar permutation_importance.csv
+                                   holm_family_size_b_vs_a                3               dm_tests.csv
+                                          n_dm_tests_total              306               dm_tests.csv
+                           n_dm_decisions_changed_bartlett               19      dm_tests_bartlett.csv
+                                   n_sig_vs_sn_bartlett_h1                8      dm_tests_bartlett.csv
+                                  n_sig_vs_ets_bartlett_h1                0      dm_tests_bartlett.csv
+                                   n_sig_vs_sn_bartlett_h7                8      dm_tests_bartlett.csv
+                                  n_sig_vs_ets_bartlett_h7                1      dm_tests_bartlett.csv
+                                  n_sig_vs_sn_bartlett_h28                7      dm_tests_bartlett.csv
+                                 n_sig_vs_ets_bartlett_h28                0      dm_tests_bartlett.csv
+                            p_holm_vs_ets_h28_bartlett_min            0.141      dm_tests_bartlett.csv
+                            p_holm_vs_ets_h28_bartlett_max            0.229      dm_tests_bartlett.csv
+                                   p_holm_rf28_se_bartlett            0.896      dm_tests_bartlett.csv
+                                      n_b_sig_any_bartlett                0      dm_tests_bartlett.csv
+                                      abl_n_tests_per_loss               45        ablation_groups.csv
+                                      abl_holm_family_size               15        ablation_groups.csv
+                                        abl_change_min_pct             -3.2        ablation_groups.csv
+                                        abl_change_max_pct              3.3        ablation_groups.csv
+                                       abl_n_better_sig_se                1        ablation_groups.csv
+                                        abl_n_worse_sig_se                1        ablation_groups.csv
+                                         abl_n_sig_h1h7_se                0        ablation_groups.csv
+                                       abl_n_better_sig_ae                0        ablation_groups.csv
+                                        abl_n_worse_sig_ae                0        ablation_groups.csv
+                                         abl_n_sig_h1h7_ae                0        ablation_groups.csv
+                              abl_n_better_sig_se_bartlett                0        ablation_groups.csv
+                               abl_n_worse_sig_se_bartlett                0        ablation_groups.csv
+                                abl_n_sig_h1h7_se_bartlett                0        ablation_groups.csv
+                              abl_n_better_sig_ae_bartlett                0        ablation_groups.csv
+                               abl_n_worse_sig_ae_bartlett                0        ablation_groups.csv
+                                abl_n_sig_h1h7_ae_bartlett                0        ablation_groups.csv
+                 abl_change_ridge_active_customers_h28_pct             -1.0        ablation_groups.csv
+                  abl_p_holm_se_ridge_active_customers_h28            0.042        ablation_groups.csv
+         abl_p_holm_se_bartlett_ridge_active_customers_h28             0.45        ablation_groups.csv
+        abl_change_random_forest_cancellation_rate_h28_pct              0.8        ablation_groups.csv
+         abl_p_holm_se_random_forest_cancellation_rate_h28              0.0        ablation_groups.csv
+abl_p_holm_se_bartlett_random_forest_cancellation_rate_h28              1.0        ablation_groups.csv
+                                    abl_p_holm_se_rf_B_h28            0.071        ablation_groups.csv
+                                  abl_determinism_max_diff              0.0        ablation_groups.csv
+                                           n_b_vs_a_h17_se               18               dm_tests.csv
+                                     n_b_better_sig_h17_se                0               dm_tests.csv
+                                      n_b_worse_sig_h17_se                0               dm_tests.csv
+                                     n_b_vs_a_nosat_h17_se               18  dm_tests_no_saturdays.csv
+                                  n_b_sig_any_nosat_h17_se                0  dm_tests_no_saturdays.csv
+                                           n_b_vs_a_h17_ae               18               dm_tests.csv
+                                     n_b_better_sig_h17_ae                0               dm_tests.csv
+                                      n_b_worse_sig_h17_ae                0               dm_tests.csv
+                                     n_b_vs_a_nosat_h17_ae               18  dm_tests_no_saturdays.csv
+                                  n_b_sig_any_nosat_h17_ae                0  dm_tests_no_saturdays.csv
+                                  n_b_sig_any_bartlett_h17                0      dm_tests_bartlett.csv
+                                    rel_b_vs_a_h17_min_pct             -3.2                metrics.csv
+                                    rel_b_vs_a_h17_max_pct              4.1                metrics.csv
+                                rel_b_vs_a_rev_h17_min_pct             -3.2                metrics.csv
+                                rel_b_vs_a_rev_h17_max_pct              0.6                metrics.csv
+                                            n_dm_tests_h17              204               dm_tests.csv
+                       n_dm_decisions_changed_bartlett_h17                7      dm_tests_bartlett.csv
+                                    abl_change_h17_min_pct             -3.2        ablation_groups.csv
+                                    abl_change_h17_max_pct              3.1        ablation_groups.csv
+                                  abl_n_tests_h17_per_loss               30        ablation_groups.csv
+                                         dmvar_h28_n_tests               66    dm_variance_summary.csv
+                            dmvar_h28_share_below_half_pct             12.0    dm_variance_summary.csv
+                                       dmvar_h28_ratio_min            -0.07    dm_variance_summary.csv
+                                   dmvar_h28_n_nonpositive                1    dm_variance_summary.csv
+                                        dmvar_h7_ratio_min             0.52    dm_variance_summary.csvnote: Running TeX ...
+warning: main.tex:298: Underfull \vbox (badness 1158) has occurred while \output is active
+note: Running BibTeX on main.aux ...
+note: Rerunning TeX because bibtex was run ...
+warning: main.tex:298: Underfull \vbox (badness 1158) has occurred while \output is active
+note: Rerunning TeX because "main.aux" changed ...
+warning: main.tex:298: Underfull \vbox (badness 1158) has occurred while \output is active
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+note: Running xdvipdfmx ...
+note: Writing `main.pdf` (254.494140625 KiB)
+note: Skipped writing 2 intermediate files (use --keep-intermediates to keep them)
+..........................................                               [100%]
+42 passed in 1.88s
+
+data_profile                     58.3 s
+cleaning                          1.2 s
+kpis                              0.4 s
+eda                               0.7 s
+eda_figures                       0.7 s
+backtest                        374.0 s
+robustness                        0.1 s
+ablation                        241.7 s
+dm_variance_diagnostics           0.1 s
+dm_fallback_report                0.0 s
+figures                           0.7 s
+prediction_figures                0.2 s
+paper_numbers                     0.2 s
+paper_pdf                         1.0 s
+dm_hln calls: fallback_gamma0      3.0 s
+dm_hln calls: ok               1095.0 s
+pytest (exit 0)                   2.4 s
+TOTAL                           681.8 s

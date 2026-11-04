@@ -1,0 +1,14 @@
+rule,action,description,n_rows_affected,net_revenue_affected,n_rows_remaining,net_revenue_remaining,gross_revenue_remaining
+R0,start,Combined raw (both sheets),0,0.0,1067371.0,19287250.57,20813918.43
+R1,drop,Sheet 2009-2010 rows dated >= 2010-12-01 (exact copy of sheet 2010-2011),22523,377488.45,1044848.0,18909762.12,20375065.78
+R2,drop,"Exact duplicate rows within remaining data (all 8 columns), keep first",11812,54228.42,1033036.0,18855533.7,20317584.31
+R3,drop,Invoice prefix A: 'Adjust bad debt' accounting entries,6,-147614.08,1033030.0,19003147.78,20465198.39
+R4,drop,"Price == 0 (stock adjustments, damages, free items; revenue 0)",6014,0.0,1027016.0,19003147.78,20465198.39
+R5,drop,"Accounting / fee / test StockCodes: ADJUST, ADJUST2, AMAZONFEE, B, BANK CHARGES, CRUK, D, M, S, TEST001, TEST002, m",1895,-359348.41,1025121.0,19362496.19,20094580.34
+R6,drop,"Postage / carriage StockCodes: C2, C3, DOT, POST",3771,433410.51,1021350.0,18929085.68,19645617.81
+R7,drop,Extreme orders (|Qty| >= 50000) with exact same-customer cancellation,4,0.0,1021346.0,18929085.68,19399964.61
+R8,flag,"Cancellations (Invoice prefix C): keep, exclude from gross revenue, use for Cancellation Rate",17914,-470878.93,1021346.0,18929085.68,19399964.61
+R9,flag,"Missing Customer ID: keep for Revenue/Orders, exclude only from Active Customers",227167,2570492.97,1021346.0,18929085.68,19399964.61
+R10,kpi,Partial last day 2011-12-09 (ends 12:50): exclude from the daily KPI table,1615,29530.26,1021346.0,18929085.68,19399964.61
+check,info,Remaining rows Quantity<=0 without C (after R1-R7),0,,,,
+check,info,Remaining invoices total / C after R1-R7,46919,7405.0,,,

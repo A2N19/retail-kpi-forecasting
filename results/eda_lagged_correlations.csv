@@ -1,0 +1,11 @@
+driver,lag,n,spearman_with_revenue
+orders,1,494,0.4553
+orders,7,573,0.5424
+active_customers,1,494,0.4567
+active_customers,7,573,0.5147
+aov,1,494,0.1249
+aov,7,573,0.2737
+cancellation_rate,1,494,-0.0514
+cancellation_rate,7,573,0.1092
+revenue,1,494,0.3923
+revenue,7,573,0.5371

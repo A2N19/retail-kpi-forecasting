@@ -1,0 +1,68 @@
+metric,value,note
+n_rows_total,1067371,
+n_rows_sheet[Year 2009-2010],525461,
+n_rows_sheet[Year 2010-2011],541910,
+date_min,2009-12-01 07:45:00,
+date_max,2011-12-09 12:50:00,
+date_range_sheet[Year 2009-2010],2009-12-01 07:45:00 .. 2010-12-09 20:01:00,
+date_range_sheet[Year 2010-2011],2010-12-01 08:26:00 .. 2011-12-09 12:50:00,
+n_invoices_unique,53628,
+n_stockcodes_unique,5305,
+n_countries,43,
+share_rows_uk,0.9194,
+n_calendar_days,739,first..last transaction date inclusive
+n_trading_days,604,days with >= 1 row (any type)
+n_missing_calendar_days,135,
+trading_days[Monday],94,
+missing_days[Monday],11,
+trading_days[Tuesday],104,
+missing_days[Tuesday],2,
+trading_days[Wednesday],104,
+missing_days[Wednesday],2,
+trading_days[Thursday],103,
+missing_days[Thursday],3,
+trading_days[Friday],99,
+missing_days[Friday],7,
+trading_days[Saturday],1,
+missing_days[Saturday],104,
+trading_days[Sunday],99,
+missing_days[Sunday],6,
+n_rows_saturday,402,
+saturday_dates,2009-12-05,
+n_gap_runs,108,
+gap_runs_longer_than_1_day,2009-12-24..2010-01-03 (11d); 2010-04-02..2010-04-05 (4d); 2010-12-24..2011-01-03 (11d); 2011-04-22..2011-04-25 (4d); 2011-04-29..2011-04-30 (2d),see results/calendar_gaps.csv
+n_missing_non_saturday_days,31,
+missing_non_saturday_dates,"2009-12-24, 2009-12-25, 2009-12-27, 2009-12-28, 2009-12-29, 2009-12-30, 2009-12-31, 2010-01-01, 2010-01-03, 2010-04-02, 2010-04-04, 2010-04-05, 2010-05-03, 2010-05-31, 2010-08-30, 2010-12-24, 2010-12-26, 2010-12-27, 2010-12-28, 2010-12-29, 2010-12-30, 2010-12-31, 2011-01-02, 2011-01-03, 2011-04-22, 2011-04-24, 2011-04-25, 2011-04-29, 2011-05-02, 2011-05-30, 2011-08-29",
+n_rows_missing_customer_id,243007,
+share_rows_missing_customer_id,0.2277,
+share_net_revenue_missing_customer_id,0.1368,"net = sum(Quantity*Price), all rows"
+n_rows_invoice_prefix[<digit>],1047871,
+n_rows_invoice_prefix[C],19494,
+n_rows_invoice_prefix[A],6,
+n_rows_cancellation_C,19494,
+share_rows_cancellation_C,0.0183,
+n_invoices_cancellation_C,8292,
+share_invoices_cancellation_C,0.1546,
+cancellation_C_revenue_sum,-1526667.86,
+n_rows_quantity_le_0,22950,
+n_rows_quantity_lt_0,22950,
+n_rows_quantity_eq_0,0,
+n_rows_quantity_le_0_not_C,3457,negative qty without C invoice
+n_rows_quantity_gt_0_and_C,1,
+n_rows_price_le_0,6207,
+n_rows_price_lt_0,5,
+n_rows_price_eq_0,6202,
+n_rows_price_eq_0_and_missing_customer,6131,
+n_rows_missing_description,4382,
+n_rows_quantity_le_0_not_C_and_price_eq_0,3457,
+n_rows_stockcode_nonstandard,6093,not matching ^\d{5}[A-Za-z]*$
+n_stockcodes_nonstandard,62,
+net_revenue_stockcode_nonstandard,-95225.44,
+n_full_duplicate_rows,34335,all 8 data columns identical; first occurrence kept in count
+n_full_duplicate_rows_within_sheet,12133,
+n_full_duplicate_rows_cross_sheet_only,22202,
+net_revenue_in_duplicate_rows,431716.87,
+net_revenue_all_rows,19287250.57,before cleaning
+daily_net_revenue_min,-22212.61,"raw, trading days only"
+daily_net_revenue_max,117271.12,"raw, trading days only"
+n_trading_days_net_revenue_le_0,4,raw

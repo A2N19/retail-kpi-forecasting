@@ -1,0 +1,115 @@
+# Experimental protocol. FROZEN: changes after freezing must be logged in meta.changes with a reason.
+# src/backtest.py reads its parameters from this file.
+
+meta:
+  status: frozen
+  frozen_on: "2026-11-03"
+  version: 1.0
+  changes:   # post hoc additions after the main results; the frozen settings below were NOT changed
+    - date: "2026-11-03"
+      what: "Robustness: DM-HLN tests on the subset without Saturdays (src/robustness.py)"
+      why: "close an open [CHECK] in the paper draft"
+    - date: "2026-11-03"
+      what: "Feature-group ablation A + one driver group (src/ablation.py, results/ablation_groups.csv)"
+      why: "requested by the author to separate the effect of each driver group; post hoc"
+    - date: "2026-11-03"
+      what: "Sensitivity: DM-HLN with Bartlett weights (results/dm_tests_bartlett.csv)"
+      why: >
+        at h=28 (n=305) the rectangular-kernel variance is strongly downward-biased (ratio to lag-0
+        variance down to 0.03), which inflates significance; the protocol test remains primary"
+
+seed: 42
+
+data:
+  source: "UCI Online Retail II (DOI 10.24432/C5CG6D, CC BY 4.0)"
+  raw_file: data/raw/online_retail_II.xlsx   # read-only
+  raw_sha256: BCBE73B35F5B7BABF197FB0CB983A11F5D9FF929078D4AA53D171B1F2DF2E980
+  sheets: ["Year 2009-2010", "Year 2010-2011"]   # overlap 2010-12-01..09 is an exact copy (R1)
+  raw_period: ["2009-12-01", "2011-12-09"]
+  kpi_period: ["2009-12-01", "2011-12-08"]       # 2011-12-09 is partial (R10)
+  cleaning_rules: [R1, R2, R3, R4, R5, R6, R7, R8, R9, R10]   # src/cleaning.py, src/kpis.py
+  cleaning_log: results/cleaning_log.csv
+
+frequency:
+  primary: D
+  calendar: "full 7-day calendar, zeros on non-trading days"
+  seasonal_period: 7
+  rationale: >
+    results/eda_seasonality.csv: on the calendar series ACF(7)=0.64 and seasonal-naive MAE with m=7
+    (10,599) is lower than naive-1 (15,830) and m=6 (16,850). Saturdays are non-trading (1 of 105 has sales),
+    which is a deterministic weekly pattern handled by m=7 and day-of-week features.
+  robustness: "metrics also reported excluding Saturdays"
+
+targets:
+  primary: revenue
+  secondary: [orders, active_customers]     # thesis only
+  kpi_definitions:       # per calendar day; see src/kpis.py
+    revenue: "sum(Quantity * Price), non-cancelled lines (gross merchandise revenue)"
+    orders: "nunique(Invoice), non-cancelled"
+    active_customers: "nunique(Customer ID), non-cancelled, missing IDs excluded"
+    aov: "revenue / orders (0 on non-trading days when used as a feature)"
+    cancellation_rate: "cancelled invoices / (orders + cancelled invoices) (0 on non-trading days as feature)"
+    quantity_sold: "sum(Quantity), non-cancelled"
+    revenue_per_customer: "revenue of identified customers / active_customers"
+
+horizons: [1, 7, 28]     # calendar days; paper core uses [1, 7]
+strategy: direct         # one model per horizon
+
+split:
+  method: rolling_origin
+  window: expanding
+  random_split: false
+  same_target_dates_for_all_models: true
+  test_start: "2011-02-07"
+  test_end: "2011-12-08"
+  test_rationale: >
+    First Monday such that no forecast origin (T - 28) and no seasonal reference falls in the
+    Christmas closure 2010-12-24..2011-01-03. 305 target days per horizon.
+  origin_step_days: 1    # one forecast per target day and horizon; origin = T - h
+  ml_refit_every_days: 7 # ML parameters re-estimated weekly on all data <= origin; features always current
+  stat_refit: every_origin
+  preprocessing_fit_on: train_only
+
+features:
+  module: src/features.py
+  own_lags: "h..h+6 plus first four multiples of 7 that are >= h"
+  own_rolling: "mean and std over 7 and 28 days of the series shifted by h"
+  calendar: [day_of_week_onehot, month_onehot, uk_bank_holiday, xmas_period]
+  model_A: [own_lags, own_rolling, calendar]
+  model_B: [own_lags, own_rolling, calendar, other_kpi_lags_h..h+6, other_kpi_rmean7]
+  other_kpis: [revenue, orders, active_customers, aov, cancellation_rate]   # minus the target
+  leakage_control:
+    enabled: true
+    set: "B + same-day orders, active_customers, aov, cancellation_rate, quantity_sold"
+    models: [ridge, lightgbm]
+    target: revenue
+
+models:
+  seasonal_naive: {m: 7, forecast: "y[T - 7*ceil(h/7)]"}
+  ets: {error: add, trend: null, seasonal: add, seasonal_periods: 7}
+  sarima: {order: [1, 0, 1], seasonal_order: [0, 1, 1, 7]}
+  ridge: {scaler: standard, alphas: "logspace(-2, 4, 25)", selection: "RidgeCV (GCV) on train only"}
+  random_forest: {n_estimators: 300, min_samples_leaf: 3, max_features: 0.5}
+  lightgbm: {n_estimators: 300, learning_rate: 0.05, num_leaves: 15, min_child_samples: 10,
+             subsample: 0.8, subsample_freq: 1, colsample_bytree: 0.8}
+  tuning: "none (fixed a priori settings) to avoid selection on the test period"
+
+metrics:
+  primary: mase
+  mase_denominator: >
+    per forecast origin o: in-sample MAE of the seasonal naive (lag 7) on the calendar series y[<= o];
+    MASE = mean over forecasts of |e| / scale(o)
+  others: [mae, rmse, wape]
+  excluded: [r2, mape]   # MAPE undefined on zero-revenue days
+
+significance:
+  test: diebold_mariano
+  correction: harvey_leybourne_newbold
+  variance: "autocovariances up to lag h-1"
+  loss: squared_error    # absolute_error reported as robustness
+  multiple_testing: holm  # within each family (target x horizon x comparison type)
+  alpha: 0.05
+
+explainability:
+  shap: "TreeExplainer on each out-of-sample LightGBM forecast, mean |SHAP| aggregated by feature group"
+  permutation_importance: "group permutation, model fitted at first test origin, MAE increase on test period"

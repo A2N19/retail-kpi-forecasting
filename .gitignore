@@ -1,0 +1,42 @@
+# Data (raw is never committed; derived data is reproducible)
+data/raw/*
+data/interim/*
+data/processed/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# Environment
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Large / binary files
+*.xlsx
+*.xls
+*.parquet
+*.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+
+# LaTeX build intermediates (paper is built with tectonic; only main.tex, tables and main.pdf are versioned)
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.out
+paper/*.synctex.gz
+paper/*.fdb_latexmk
+paper/*.fls
+
+# Secrets and local editor settings
+.env
+.env.*
+*.pem
+.idea/

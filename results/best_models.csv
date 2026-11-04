@@ -1,0 +1,4 @@
+h,model,feature_set,mase,mae,wape,model_runner_up,feature_set_runner_up,mase_runner_up
+1,random_forest,A,0.752382,7813.867015,0.280222,random_forest,B,0.75501
+7,random_forest,B,0.755681,7853.87451,0.281657,random_forest,A,0.756052
+28,random_forest,A,0.757828,7885.822074,0.282803,random_forest,B,0.768608

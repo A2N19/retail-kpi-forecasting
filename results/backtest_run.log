@@ -1,0 +1,26 @@
+﻿[06:22:06] test 2011-02-07..2011-12-08 (305 days), targets ['revenue', 'orders', 'active_customers']
+[06:22:06] revenue: statistical models
+[06:22:19] revenue: ML h=1 set=A
+[06:22:38] revenue: ML h=1 set=B
+[06:22:58] revenue: ML h=7 set=A
+[06:23:16] revenue: ML h=7 set=B
+[06:23:37] revenue: ML h=28 set=A
+[06:23:55] revenue: ML h=28 set=B
+[06:24:15] orders: statistical models
+[06:24:20] orders: ML h=1 set=A
+[06:24:38] orders: ML h=1 set=B
+[06:24:58] orders: ML h=7 set=A
+[06:25:16] orders: ML h=7 set=B
+[06:25:37] orders: ML h=28 set=A
+[06:25:57] orders: ML h=28 set=B
+[06:26:21] active_customers: statistical models
+[06:26:25] active_customers: ML h=1 set=A
+[06:26:46] active_customers: ML h=1 set=B
+[06:27:09] active_customers: ML h=7 set=A
+[06:27:30] active_customers: ML h=7 set=B
+[06:27:54] active_customers: ML h=28 set=A
+[06:28:13] active_customers: ML h=28 set=B
+[06:28:34] leakage control h=1
+[06:28:39] leakage control h=7
+[06:28:44] leakage control h=28
+[06:28:49] done in 6.7 min

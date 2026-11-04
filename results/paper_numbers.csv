@@ -1,0 +1,195 @@
+key,value,source,description
+raw_rows,1067371,data_profile.csv,rows in raw file (both sheets)
+missing_cust_rev_share_pct,13.7,data_profile.csv,% of raw net revenue with missing Customer ID
+overlap_rows,22523,cleaning_log.csv,R1 rows removed
+clean_rows,1021346,cleaning_log.csv,rows after R1-R7
+cancel_rows,17914,cleaning_log.csv,cancellation rows kept as flag
+calendar_days,738,daily_kpis_summary.csv,days in KPI table
+trading_days,603,daily_kpis_summary.csv,trading days
+sat_trading_days,1,daily_kpis_summary.csv,Saturdays with sales
+rev_median,24948.0,daily_kpis_summary.csv,median daily revenue
+acf7,0.64,eda_seasonality.csv,"ACF lag 7, calendar series"
+snaive_mae_m7,10599.0,eda_seasonality.csv,in-sample SN MAE m=7
+snaive_mae_m6,16850.0,eda_seasonality.csv,in-sample SN MAE m=6
+naive1_mae,15830.0,eda_seasonality.csv,in-sample naive-1 MAE
+test_days,305,metrics.csv,target days per horizon
+mase_rev_seasonal_naive_-_h1,0.981,metrics.csv,"revenue MASE, all days"
+mase_rev_ets_-_h1,0.872,metrics.csv,"revenue MASE, all days"
+mase_rev_sarima_-_h1,0.838,metrics.csv,"revenue MASE, all days"
+mase_rev_random_forest_A_h1,0.752,metrics.csv,"revenue MASE, all days"
+mase_rev_random_forest_B_h1,0.755,metrics.csv,"revenue MASE, all days"
+mase_rev_ridge_A_h1,0.796,metrics.csv,"revenue MASE, all days"
+mase_rev_lightgbm_A_h1,0.849,metrics.csv,"revenue MASE, all days"
+mase_rev_lightgbm_B_h1,0.833,metrics.csv,"revenue MASE, all days"
+mase_rev_nosat_sn_h1,1.142,metrics.csv,"revenue MASE excl. Saturdays, seasonal naive"
+mase_rev_nosat_ridgeA_h1,0.851,metrics.csv,"revenue MASE excl. Saturdays, Ridge A"
+mase_rev_nosat_rfA_h1,0.875,metrics.csv,"revenue MASE excl. Saturdays, RF A"
+mase_rev_seasonal_naive_-_h7,0.98,metrics.csv,"revenue MASE, all days"
+mase_rev_ets_-_h7,0.915,metrics.csv,"revenue MASE, all days"
+mase_rev_sarima_-_h7,0.861,metrics.csv,"revenue MASE, all days"
+mase_rev_random_forest_A_h7,0.756,metrics.csv,"revenue MASE, all days"
+mase_rev_random_forest_B_h7,0.756,metrics.csv,"revenue MASE, all days"
+mase_rev_ridge_A_h7,0.799,metrics.csv,"revenue MASE, all days"
+mase_rev_lightgbm_A_h7,0.799,metrics.csv,"revenue MASE, all days"
+mase_rev_lightgbm_B_h7,0.773,metrics.csv,"revenue MASE, all days"
+mase_rev_nosat_sn_h7,1.141,metrics.csv,"revenue MASE excl. Saturdays, seasonal naive"
+mase_rev_nosat_ridgeA_h7,0.868,metrics.csv,"revenue MASE excl. Saturdays, Ridge A"
+mase_rev_nosat_rfA_h7,0.879,metrics.csv,"revenue MASE excl. Saturdays, RF A"
+mase_rev_seasonal_naive_-_h28,1.065,metrics.csv,"revenue MASE, all days"
+mase_rev_ets_-_h28,0.92,metrics.csv,"revenue MASE, all days"
+mase_rev_sarima_-_h28,0.96,metrics.csv,"revenue MASE, all days"
+mase_rev_random_forest_A_h28,0.758,metrics.csv,"revenue MASE, all days"
+mase_rev_random_forest_B_h28,0.769,metrics.csv,"revenue MASE, all days"
+mase_rev_ridge_A_h28,0.818,metrics.csv,"revenue MASE, all days"
+mase_rev_lightgbm_A_h28,0.787,metrics.csv,"revenue MASE, all days"
+mase_rev_lightgbm_B_h28,0.785,metrics.csv,"revenue MASE, all days"
+mase_rev_nosat_sn_h28,1.24,metrics.csv,"revenue MASE excl. Saturdays, seasonal naive"
+mase_rev_nosat_ridgeA_h28,0.87,metrics.csv,"revenue MASE excl. Saturdays, Ridge A"
+mase_rev_nosat_rfA_h28,0.881,metrics.csv,"revenue MASE excl. Saturdays, RF A"
+best_rev_h1,random_forest[A],metrics.csv,lowest revenue MASE
+best_rev_h7,random_forest[B],metrics.csv,lowest revenue MASE
+best_rev_h28,random_forest[A],metrics.csv,lowest revenue MASE
+wape_rev_rfA_h1,0.28,metrics.csv,WAPE RF A
+wape_rev_rfA_h7,0.282,metrics.csv,WAPE RF A
+wape_rev_rfA_h28,0.283,metrics.csv,WAPE RF A
+n_sig_vs_sn_h1,8,dm_tests.csv,revenue: models significantly better than SN (Holm)
+n_vs_sn_h1,8,dm_tests.csv,revenue: comparisons vs SN
+n_sig_vs_ets_h1,0,dm_tests.csv,revenue: ML models significantly better than ETS (Holm)
+n_rawsig_vs_ets_h1,4,dm_tests.csv,"revenue: ML better than ETS, unadjusted p<0.05"
+n_vs_ets_h1,6,dm_tests.csv,revenue: ML comparisons vs ETS
+n_sig_vs_sn_h7,8,dm_tests.csv,revenue: models significantly better than SN (Holm)
+n_vs_sn_h7,8,dm_tests.csv,revenue: comparisons vs SN
+n_sig_vs_ets_h7,0,dm_tests.csv,revenue: ML models significantly better than ETS (Holm)
+n_rawsig_vs_ets_h7,5,dm_tests.csv,"revenue: ML better than ETS, unadjusted p<0.05"
+n_vs_ets_h7,6,dm_tests.csv,revenue: ML comparisons vs ETS
+n_sig_vs_sn_h28,7,dm_tests.csv,revenue: models significantly better than SN (Holm)
+n_vs_sn_h28,8,dm_tests.csv,revenue: comparisons vs SN
+n_sig_vs_ets_h28,6,dm_tests.csv,revenue: ML models significantly better than ETS (Holm)
+n_rawsig_vs_ets_h28,6,dm_tests.csv,"revenue: ML better than ETS, unadjusted p<0.05"
+n_vs_ets_h28,6,dm_tests.csv,revenue: ML comparisons vs ETS
+p_holm_sarima_vs_sn_h28,0.106,dm_tests.csv,SARIMA vs SN h=28
+n_b_vs_a_se,27,dm_tests.csv,B vs A tests (se)
+n_b_better_sig_se,0,dm_tests.csv,"B significantly better than A (Holm, se)"
+n_b_worse_sig_se,1,dm_tests.csv,"B significantly worse than A (Holm, se)"
+n_b_vs_a_ae,27,dm_tests.csv,B vs A tests (ae)
+n_b_better_sig_ae,0,dm_tests.csv,"B significantly better than A (Holm, ae)"
+n_b_worse_sig_ae,0,dm_tests.csv,"B significantly worse than A (Holm, ae)"
+n_b_vs_a_nosat_se,27,dm_tests_no_saturdays.csv,B vs A tests excl. Saturdays (se)
+n_b_sig_any_nosat_se,0,dm_tests_no_saturdays.csv,significant B vs A differences excl. Saturdays (se)
+n_b_vs_a_nosat_ae,27,dm_tests_no_saturdays.csv,B vs A tests excl. Saturdays (ae)
+n_b_sig_any_nosat_ae,0,dm_tests_no_saturdays.csv,significant B vs A differences excl. Saturdays (ae)
+p_holm_rf28_se,0.016,dm_tests.csv,"RF B vs A, revenue h=28, SE"
+p_holm_rf28_ae,0.059,dm_tests.csv,"RF B vs A, revenue h=28, AE"
+rel_b_vs_a_min_pct,-3.2,metrics.csv,min % MASE change B vs A (all targets)
+rel_b_vs_a_max_pct,4.1,metrics.csv,max % MASE change B vs A (all targets)
+rel_b_vs_a_rev_min_pct,-3.2,metrics.csv,revenue min % change B vs A
+rel_b_vs_a_rev_max_pct,1.4,metrics.csv,revenue max % change B vs A
+leak_mase_min,0.16,leakage_control.csv,min MASE with leak
+leak_mase_max,0.24,leakage_control.csv,max MASE with leak
+legal_mase_min,0.77,leakage_control.csv,"min MASE legal B (ridge, lgbm)"
+legal_mase_max,0.83,leakage_control.csv,"max MASE legal B (ridge, lgbm)"
+leak_ratio_min,3.4,leakage_control.csv,legal/leaky MASE ratio min
+leak_ratio_max,4.8,leakage_control.csv,legal/leaky MASE ratio max
+leak_wape_lgbm_h1,0.068,leakage_control.csv,WAPE leak
+legal_wape_lgbm_h1,0.311,leakage_control.csv,WAPE legal
+shap_drivers_B_h1_pct,48.0,shap_groups.csv,revenue LightGBM B: share of driver groups
+shap_calendar_B_h1_pct,14.0,shap_groups.csv,calendar share B
+shap_calendar_A_h1_pct,26.0,shap_groups.csv,calendar share A
+shap_ownlags_A_h1_pct,54.0,shap_groups.csv,own lags share A
+shap_drivers_B_h7_pct,44.0,shap_groups.csv,revenue LightGBM B: share of driver groups
+shap_calendar_B_h7_pct,23.0,shap_groups.csv,calendar share B
+shap_calendar_A_h7_pct,33.0,shap_groups.csv,calendar share A
+shap_ownlags_A_h7_pct,48.0,shap_groups.csv,own lags share A
+shap_drivers_B_h28_pct,41.0,shap_groups.csv,revenue LightGBM B: share of driver groups
+shap_calendar_B_h28_pct,27.0,shap_groups.csv,calendar share B
+shap_calendar_A_h28_pct,39.0,shap_groups.csv,calendar share A
+shap_ownlags_A_h28_pct,49.0,shap_groups.csv,own lags share A
+perm_top_lightgbm_h1,calendar,permutation_importance.csv,group with largest MAE increase
+perm_top_lightgbm_h7,calendar,permutation_importance.csv,group with largest MAE increase
+perm_top_lightgbm_h28,calendar,permutation_importance.csv,group with largest MAE increase
+perm_top_ridge_h1,calendar,permutation_importance.csv,group with largest MAE increase
+perm_top_ridge_h7,calendar,permutation_importance.csv,group with largest MAE increase
+perm_top_ridge_h28,calendar,permutation_importance.csv,group with largest MAE increase
+holm_family_size_b_vs_a,3,dm_tests.csv,"tests per Holm family, B vs A (target x h x type x loss)"
+n_dm_tests_total,306,dm_tests.csv,all DM tests (both losses)
+n_dm_decisions_changed_bartlett,19,dm_tests_bartlett.csv,Holm decisions (alpha .05) that differ between kernels
+n_sig_vs_sn_bartlett_h1,8,dm_tests_bartlett.csv,"revenue: better than SN (Holm, Bartlett)"
+n_sig_vs_ets_bartlett_h1,0,dm_tests_bartlett.csv,"revenue: ML better than ETS (Holm, Bartlett)"
+n_sig_vs_sn_bartlett_h7,8,dm_tests_bartlett.csv,"revenue: better than SN (Holm, Bartlett)"
+n_sig_vs_ets_bartlett_h7,1,dm_tests_bartlett.csv,"revenue: ML better than ETS (Holm, Bartlett)"
+n_sig_vs_sn_bartlett_h28,7,dm_tests_bartlett.csv,"revenue: better than SN (Holm, Bartlett)"
+n_sig_vs_ets_bartlett_h28,0,dm_tests_bartlett.csv,"revenue: ML better than ETS (Holm, Bartlett)"
+p_holm_vs_ets_h28_bartlett_min,0.141,dm_tests_bartlett.csv,min
+p_holm_vs_ets_h28_bartlett_max,0.229,dm_tests_bartlett.csv,max
+p_holm_rf28_se_bartlett,0.896,dm_tests_bartlett.csv,RF B vs A h28
+n_b_sig_any_bartlett,0,dm_tests_bartlett.csv,"B vs A significant, Bartlett"
+abl_n_tests_per_loss,45,ablation_groups.csv,set-vs-A tests per loss and kernel
+abl_holm_family_size,15,ablation_groups.csv,"tests per Holm family (per h, loss)"
+abl_change_min_pct,-3.2,ablation_groups.csv,min % change
+abl_change_max_pct,3.3,ablation_groups.csv,max % change
+abl_n_better_sig_se,1,ablation_groups.csv,set better than A (se)
+abl_n_worse_sig_se,1,ablation_groups.csv,set worse than A (se)
+abl_n_sig_h1h7_se,0,ablation_groups.csv,"significant at h=1,7 (se)"
+abl_n_better_sig_ae,0,ablation_groups.csv,set better than A (ae)
+abl_n_worse_sig_ae,0,ablation_groups.csv,set worse than A (ae)
+abl_n_sig_h1h7_ae,0,ablation_groups.csv,"significant at h=1,7 (ae)"
+abl_n_better_sig_se_bartlett,0,ablation_groups.csv,set better than A (se_bartlett)
+abl_n_worse_sig_se_bartlett,0,ablation_groups.csv,set worse than A (se_bartlett)
+abl_n_sig_h1h7_se_bartlett,0,ablation_groups.csv,"significant at h=1,7 (se_bartlett)"
+abl_n_better_sig_ae_bartlett,0,ablation_groups.csv,set better than A (ae_bartlett)
+abl_n_worse_sig_ae_bartlett,0,ablation_groups.csv,set worse than A (ae_bartlett)
+abl_n_sig_h1h7_ae_bartlett,0,ablation_groups.csv,"significant at h=1,7 (ae_bartlett)"
+abl_change_ridge_active_customers_h28_pct,-1.0,ablation_groups.csv,% change
+abl_p_holm_se_ridge_active_customers_h28,0.042,ablation_groups.csv,"Holm p, SE, rect."
+abl_p_holm_se_bartlett_ridge_active_customers_h28,0.45,ablation_groups.csv,"Holm p, SE, Bartlett"
+abl_change_random_forest_cancellation_rate_h28_pct,0.8,ablation_groups.csv,% change
+abl_p_holm_se_random_forest_cancellation_rate_h28,0.0,ablation_groups.csv,"Holm p, SE, rect."
+abl_p_holm_se_bartlett_random_forest_cancellation_rate_h28,1.0,ablation_groups.csv,"Holm p, SE, Bartlett"
+abl_p_holm_se_rf_B_h28,0.071,ablation_groups.csv,RF B vs A h28 in the 15-test ablation family
+abl_determinism_max_diff,0.0,ablation_groups.csv,"max |yhat diff| recomputed A,B vs main backtest"
+n_b_vs_a_h17_se,18,dm_tests.csv,"B vs A tests at h=1,7 (se)"
+n_b_better_sig_h17_se,0,dm_tests.csv,"B significantly better, h=1,7 (se)"
+n_b_worse_sig_h17_se,0,dm_tests.csv,"B significantly worse, h=1,7 (se)"
+n_b_vs_a_nosat_h17_se,18,dm_tests_no_saturdays.csv,"B vs A excl. Sat, h=1,7 (se)"
+n_b_sig_any_nosat_h17_se,0,dm_tests_no_saturdays.csv,"significant B vs A excl. Sat, h=1,7 (se)"
+n_b_vs_a_h17_ae,18,dm_tests.csv,"B vs A tests at h=1,7 (ae)"
+n_b_better_sig_h17_ae,0,dm_tests.csv,"B significantly better, h=1,7 (ae)"
+n_b_worse_sig_h17_ae,0,dm_tests.csv,"B significantly worse, h=1,7 (ae)"
+n_b_vs_a_nosat_h17_ae,18,dm_tests_no_saturdays.csv,"B vs A excl. Sat, h=1,7 (ae)"
+n_b_sig_any_nosat_h17_ae,0,dm_tests_no_saturdays.csv,"significant B vs A excl. Sat, h=1,7 (ae)"
+n_b_sig_any_bartlett_h17,0,dm_tests_bartlett.csv,"B vs A, Bartlett, h=1,7"
+rel_b_vs_a_h17_min_pct,-3.2,metrics.csv,"min % change B vs A, h=1,7, all targets"
+rel_b_vs_a_h17_max_pct,4.1,metrics.csv,"max % change B vs A, h=1,7, all targets"
+rel_b_vs_a_rev_h17_min_pct,-3.2,metrics.csv,"revenue min % change, h=1,7"
+rel_b_vs_a_rev_h17_max_pct,0.6,metrics.csv,"revenue max % change, h=1,7"
+n_dm_tests_h17,204,dm_tests.csv,"all DM tests at h=1,7 (both losses)"
+n_dm_decisions_changed_bartlett_h17,7,dm_tests_bartlett.csv,"decisions differing between kernels at h=1,7"
+abl_change_h17_min_pct,-3.2,ablation_groups.csv,"h=1,7"
+abl_change_h17_max_pct,3.1,ablation_groups.csv,"h=1,7"
+abl_n_tests_h17_per_loss,30,ablation_groups.csv,"set-vs-A tests at h=1,7 per loss and kernel"
+n_sig_vs_sn_se_h1,8,dm_tests.csv,"revenue: better than sn (Holm, se), of 8"
+n_sig_vs_ets_se_h1,0,dm_tests.csv,"revenue: better than ets (Holm, se), of 6"
+n_sig_vs_sn_se_h7,8,dm_tests.csv,"revenue: better than sn (Holm, se), of 8"
+n_sig_vs_ets_se_h7,0,dm_tests.csv,"revenue: better than ets (Holm, se), of 6"
+n_sig_vs_sn_ae_h1,7,dm_tests.csv,"revenue: better than sn (Holm, ae), of 8"
+n_sig_vs_ets_ae_h1,4,dm_tests.csv,"revenue: better than ets (Holm, ae), of 6"
+n_sig_vs_sn_ae_h7,6,dm_tests.csv,"revenue: better than sn (Holm, ae), of 8"
+n_sig_vs_ets_ae_h7,6,dm_tests.csv,"revenue: better than ets (Holm, ae), of 6"
+p_holm_ae_ets_vs_sn_h1,0.058,dm_tests.csv,"AE loss, Holm p vs seasonal naive"
+p_holm_ae_ets_vs_sn_h7,0.149,dm_tests.csv,"AE loss, Holm p vs seasonal naive"
+p_holm_ae_sarima_vs_sn_h7,0.053,dm_tests.csv,"AE loss, Holm p vs seasonal naive"
+n_countries_clean,43,eda_country_share.csv,countries in clean non-cancelled lines
+uk_share_revenue_pct,85.4,eda_country_share.csv,"UK share of gross revenue (clean, KPI period)"
+uk_share_lines_pct,92.0,eda_country_share.csv,"UK share of lines (clean, KPI period)"
+dmvar_h28_n_tests,66,dm_variance_summary.csv,comparisons diagnosed at h=28
+dmvar_h28_share_below_half_pct,12.0,dm_variance_summary.csv,% with rectangular variance < 0.5 x lag-0 variance
+dmvar_h28_ratio_min,-0.07,dm_variance_summary.csv,min ratio
+dmvar_h28_n_nonpositive,1,dm_variance_summary.csv,rectangular variance <= 0
+dmvar_h7_ratio_min,0.52,dm_variance_summary.csv,min ratio h=7
+dmvar_h28_n_main,51,dm_variance_diagnostics.csv,h=28 SE comparisons of the main tests (3 targets x 17)
+dmvar_h28_n_ablation,15,dm_variance_diagnostics.csv,h=28 SE comparisons of the ablation (revenue)
+dmvar_h28_n_small_positive,7,dm_variance_diagnostics.csv,0 < rect/lag0 ratio < 0.5 (SE)
+dmvar_h28_n_negative_se,1,dm_variance_diagnostics.csv,rect variance <= 0 (SE)
+fallback_h28_ae,2,dm_fallback_counts.csv,"negative rect variance, AE loss, h=28 (all sources)"
+fallback_h17_total,0,dm_fallback_counts.csv,"negative-variance fallbacks at h=1,7 (all sources, both losses)"
+mase_rev_nosat_ridgeB_h1,0.844,metrics.csv,"revenue MASE excl. Saturdays, Ridge B, h=1 (lowest on subset)"

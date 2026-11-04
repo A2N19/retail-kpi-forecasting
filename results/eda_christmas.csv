@@ -1,0 +1,3 @@
+winter,closure_start,closure_end,closure_days,last_trading_day,mean_rev_5_trading_days_before,first_trading_day_after,mean_rev_5_trading_days_after,non_saturday_zero_days_in_window
+2009/2010,2009-12-24,2010-01-03,11,2009-12-23,20810.72,2010-01-04,28504.99,9
+2010/2011,2010-12-24,2011-01-03,11,2010-12-23,18513.62,2011-01-04,26063.44,9
