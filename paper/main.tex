@@ -197,8 +197,8 @@ feature sets, plus the leakage control. This paper focuses on revenue; orders an
 reported for the B-vs-A comparison only. The leakage control repeats Model~B for Ridge and LightGBM and adds
 the values of orders, active customers, AOV, cancellation rate and quantity sold on the target day itself. % src/features.py: LEAKY_SAME_DAY (*_lag0 features)
 Feature attributions are computed with TreeSHAP for every out-of-sample LightGBM forecast and aggregated by feature group; group
-permutation importance is computed as a cross-check. The code, the frozen protocol and all result files are
-available in the project repository \CHECK[: repository URL or availability statement]. The full backtest
+permutation importance is computed as a cross-check. The code, experiment configurations, and result files are
+available at \url{https://github.com/A2N19/retail-kpi-forecasting}. The full backtest
 runs in under 7 minutes on a laptop CPU. % results/run_all_log.csv: backtest 410.2 s (fresh environment)
 
 % =====================================================================================
