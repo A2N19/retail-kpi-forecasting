@@ -46,7 +46,7 @@ evaluation covers 305 target days per horizon using mean absolute scaled error (
 Corrected Diebold--Mariano tests assess significance at 1 and 7 days, with 28 days reported descriptively.
 All six machine-learning configurations significantly outperform seasonal naive under squared- and
 absolute-error loss. Against exponential smoothing (ETS), none is significant under the primary
-squared-error loss with protocol variance after Holm adjustment. Only random forest with Model~A at
+squared-error loss with equal autocovariance weights after Holm adjustment. Only random forest with Model~A at
 7 days is significant with Bartlett weights. Under absolute-error loss, 4 of 6 configurations outperform
 ETS at 1 day and all 6 at 7 days. Comparisons with SARIMA are descriptive.
 % dm_tests.csv: n_sig_vs_ets_se_h1/h7 (0, 0), n_sig_vs_ets_ae_h1/h7 (4, 6)
@@ -54,12 +54,12 @@ ETS at 1 day and all 6 at 7 days. Comparisons with SARIMA are descriptive.
 % dm_tests.csv: n_sig_vs_sn_se_h1/h7, n_sig_vs_sn_ae_h1/h7 (all six ML configurations)
 None of the 18 Model~B--Model~A comparisons across three targets detected a significant improvement.
 The post hoc feature-group ablation for revenue likewise detected none. Revenue MASE changes range
-from $-3.2\%$ to $+0.6\%$. Adding unavailable target-day KPIs reduces MASE to 0.16--0.24, demonstrating
-the effect of leakage.
+from $-3.2\%$ to $+0.6\%$. Adding unavailable target-day KPIs reduces MASE from 0.77--0.83 to
+0.16--0.24, demonstrating the effect of leakage.
 % dm_tests.csv: n_b_vs_a_h17_se, n_b_better_sig_h17_se, n_b_better_sig_h17_ae
 % ablation_groups.csv: abl_n_sig_h1h7_*
 % metrics.csv: rel_b_vs_a_rev_h17_min_pct, rel_b_vs_a_rev_h17_max_pct
-% leakage_control.csv: leak_mase_min/max (all horizons, descriptive)
+% leakage_control.csv: legal_mase_min/max, leak_mase_min/max (all horizons, descriptive)
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -309,9 +309,10 @@ removing Saturdays leaves gaps in the forecast sequence, so the DM variance is a
 
 % =====================================================================================
 \section{Discussion and Limitations}\label{sec:limits}
-No statistically significant improvement from the lagged driver KPIs was detected in our setting, which is
-consistent with the non-significant gain reported by~\cite{kim2026drivers} for a very different design. One
-hypothesis is that at daily frequency the lagged drivers largely duplicate information already contained in
+No statistically significant improvement from the lagged driver KPIs was detected in our setting. In the
+different joint-forecasting design of Kim et al.~\cite{kim2026drivers}, the gain relative to a Transformer
+forecasting total sales directly was also not statistically significant. One hypothesis is that at daily
+frequency the lagged drivers largely duplicate information already contained in
 lagged revenue, so the models redistribute attribution (Fig.~\ref{fig:shap}) without gaining accuracy. We did
 not test this hypothesis directly.
 
