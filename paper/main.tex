@@ -37,25 +37,29 @@ zh.beldeubayeva@astanait.edu.kz}}
 \maketitle
 
 \begin{abstract}
-Business KPIs such as orders, active customers and average order value (AOV) are mechanically linked to
-revenue, which makes them attractive predictors but also an easy source of data leakage. We study whether
-\emph{lagged} operational KPIs improve daily revenue forecasts when evaluated under a leakage-safe
-protocol. Using the UCI Online Retail II transactions, we compare a model that uses only revenue history and
-calendar information (Model~A) with one that adds lagged orders, active customers, AOV and cancellation rate
-(Model~B), for Ridge, random forest and LightGBM, against seasonal naive, ETS and SARIMA baselines. Forecasts
-are evaluated by expanding-window rolling origin over 305 target days % metrics.csv: n (test_days)
-with MASE; significance is assessed with Diebold--Mariano tests with the Harvey--Leybourne--Newbold
-correction at horizons of 1 and 7 days, while a 28-day horizon is reported descriptively. With squared-error
-loss, all eight learned and statistical configurations significantly outperform the seasonal naive baseline % dm_tests.csv: n_sig_vs_sn_se_h1, n_sig_vs_sn_se_h7 (8, 8)
-at 1 and 7 days; with absolute-error loss the six ML configurations still do, but ETS does not. % dm_tests.csv: n_sig_vs_sn_ae_h1 (7), n_sig_vs_sn_ae_h7 (6); p_holm_ae_ets_vs_sn_h1/h7
-The best MASE is 0.752 (random forest, $h=1$). % metrics.csv: mase_rev_random_forest_A_h1
-No statistically significant improvement from the lagged drivers was detected in any of 18 comparisons at 1 and 7 days, % dm_tests.csv: n_b_vs_a_h17_se, n_b_better_sig_h17_se, n_b_better_sig_h17_ae
-with relative MASE changes between $-3.2\%$ and $+4.1\%$ across all three targets % metrics.csv: rel_b_vs_a_h17_min_pct, rel_b_vs_a_h17_max_pct
-($-3.2\%$ to $+0.6\%$ for revenue), % metrics.csv: rel_b_vs_a_rev_h17_min_pct, rel_b_vs_a_rev_h17_max_pct
-and a post hoc ablation by driver group found no significant difference either. % ablation_groups.csv: abl_n_sig_h1h7_*
-A control experiment that adds the target day's own KPIs to the features reduces MASE to 0.16--0.24; % leakage_control.csv: leak_mase_min/max (all horizons, descriptive)
-the MASE of the legitimate models is 3.4--4.8 times that of the leaky ones, although the added target-day % leakage_control.csv: leak_ratio_min/max (= MASE legal B / MASE leaky)
-features are unavailable at the forecast origin.
+We test whether lagged operational key performance indicators (KPIs) improve daily retail revenue forecasts
+under a leakage-safe protocol. Using UCI Online Retail II, we compare ridge regression, random forest and
+LightGBM with revenue history and calendar features (Model~A), and with additional lagged orders, active
+customers, average order value and cancellation rate (Model~B). An expanding-window rolling-origin
+evaluation covers 305 target days per horizon using mean absolute scaled error (MASE).
+% metrics.csv: n (test_days)
+Corrected Diebold--Mariano tests assess significance at 1 and 7 days, with 28 days reported descriptively.
+All six machine-learning configurations significantly outperform seasonal naive under squared- and
+absolute-error loss. Against exponential smoothing (ETS), none is significant under the primary
+squared-error loss with protocol variance after Holm adjustment. Only random forest with Model~A at
+7 days is significant with Bartlett weights. Under absolute-error loss, 4 of 6 configurations outperform
+ETS at 1 day and all 6 at 7 days. Comparisons with SARIMA are descriptive.
+% dm_tests.csv: n_sig_vs_ets_se_h1/h7 (0, 0), n_sig_vs_ets_ae_h1/h7 (4, 6)
+% dm_tests_bartlett.csv: n_sig_vs_ets_bartlett_h7 (SE, 1)
+% dm_tests.csv: n_sig_vs_sn_se_h1/h7, n_sig_vs_sn_ae_h1/h7 (all six ML configurations)
+None of the 18 Model~B--Model~A comparisons across three targets detected a significant improvement.
+The post hoc feature-group ablation for revenue likewise detected none. Revenue MASE changes range
+from $-3.2\%$ to $+0.6\%$. Adding unavailable target-day KPIs reduces MASE to 0.16--0.24, demonstrating
+the effect of leakage.
+% dm_tests.csv: n_b_vs_a_h17_se, n_b_better_sig_h17_se, n_b_better_sig_h17_ae
+% ablation_groups.csv: abl_n_sig_h1h7_*
+% metrics.csv: rel_b_vs_a_rev_h17_min_pct, rel_b_vs_a_rev_h17_max_pct
+% leakage_control.csv: leak_mase_min/max (all horizons, descriptive)
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -112,9 +116,10 @@ test~\cite{diebold1995} with the small-sample correction of Harvey, Leybourne an
 
 A related study is a recent preprint by Kim, McCarthy and Lee~\cite{kim2026drivers}, who forecast revenue
 jointly with its customer-base primitives (acquisition, repeat purchasing, spend per order) using weekly
-panels of 966 companies. Their multi-task model reduced total-sales error by 2.65\% relative to a Transformer
-forecasting total sales directly, but the paired difference was not statistically significant
-($p=.222$). % numbers from the arXiv abstract of kim2026drivers, not from our results
+panels of 966 companies. Their multi-task model reduced mean total-sales error by 30\% relative to the
+strongest representative established customer-base benchmark. Relative to a Transformer forecasting total
+sales directly, the reduction was 2.65\%, with a non-significant paired difference ($p=.222$).
+% numbers from the arXiv abstract of kim2026drivers (30%, 2.65%, p=.222), not from our results
 Our study differs in scope: a single retailer at daily frequency, classical and tree-based models, and an
 explicit ablation of lagged driver KPIs under a leakage-safe protocol. As a preprint, \cite{kim2026drivers}
 has not yet been peer reviewed.
@@ -177,8 +182,10 @@ size 3) and LightGBM~\cite{ke2017lightgbm} (300 trees, learning rate 0.05, 15 le
 
 The primary metric is MASE~\cite{hyndman2006}. Each error is scaled by the in-sample MAE of the seasonal
 naive forecast (lag 7) on the data available at its own origin; MASE is the mean of these scaled errors. We
-also report MAE, RMSE and WAPE. MAPE is not used because of zero-revenue days. Forecast accuracy is compared
-with the DM test~\cite{diebold1995} with the HLN correction~\cite{harvey1997}, using autocovariances up to lag
+also report MAE, RMSE and WAPE. MAPE is not used because of zero-revenue days. The DM tests use unscaled
+forecast errors, with loss differentials defined by squared or absolute error. Scaling by the seasonal-naive
+denominator is applied only to MASE. Forecast accuracy is compared with the DM test~\cite{diebold1995}
+with the HLN correction~\cite{harvey1997}, using autocovariances up to lag
 $h-1$ with equal weights, squared-error loss (absolute-error loss as robustness) and Holm
 adjustment~\cite{holm1979}. A Holm family is one target $\times$ horizon $\times$ comparison type $\times$ loss
 function; for Model~B vs.\ Model~A a family therefore holds 3 tests, one per ML model. % dm_tests.csv: holm_family_size_b_vs_a; code: src/backtest.py run_dm groupby(target, h, family, loss)
@@ -331,6 +338,10 @@ fallback to the lag-0 variance. No fallback occurred at $h=1$ or $h=7$;
 a corrected estimator is left for future work; (vii) the feature-group
 ablation, the no-Saturday tests and the Bartlett check were added after the main results; (viii) deep
 learning models were not considered.
+
+Model~A's features are a subset of Model~B's. The DM tests were not specifically calibrated for nested
+comparisons involving regularization and repeated estimation. Their non-rejection therefore does not
+establish that the additional KPIs contain no predictive information.
 
 % =====================================================================================
 \section{Conclusion}
