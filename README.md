@@ -3,7 +3,7 @@
 Code, frozen experimental protocol, result files, figures and LaTeX sources for the paper
 
 > A. Nurseit, Zh. Beldeubayeva. *Do Lagged Operational KPIs Improve Daily Revenue Forecasts? A Leakage-Safe
-> Ablation on Online Retail Data.* Submitted to IEEE DG 2027 (Astana IT University).
+> Ablation on Online Retail Data.* Prepared for submission to IEEE DG 2027.
 
 The paper PDF is [`paper/main.pdf`](paper/main.pdf).
 
@@ -14,12 +14,15 @@ revenue (revenue = orders x AOV), which makes them attractive predictors but als
 leakage. The study asks whether **lagged** operational KPIs improve daily revenue forecasts when evaluated
 under a leakage-safe rolling-origin protocol:
 
-- **RQ1.** Do ML models (Ridge, random forest, LightGBM) beat seasonal naive, ETS and SARIMA for daily revenue
-  (and, as secondary targets, orders and active customers)?
-- **RQ2 (core of the paper).** Does Model B (revenue history + calendar + lagged drivers) beat Model A
-  (revenue history + calendar)?
-- **RQ3.** How do accuracy and the ML advantage change with the horizon, and which feature groups drive the
-  forecasts (SHAP by feature group)?
+- **RQ1.** Do ML configurations significantly outperform the seasonal naive and ETS baselines for daily
+  revenue at the 1- and 7-day horizons? Comparisons between ML configurations and SARIMA are descriptive.
+- **RQ2 (core of the paper).** Does adding lagged driver KPIs (Model B) significantly improve on revenue
+  history and calendar alone (Model A) at the 1- and 7-day horizons?
+- **RQ3.** How do accuracy and feature-group attributions (SHAP) change from 1 to 28 days (descriptively)?
+
+The primary target is daily revenue. Orders and active customers are reported only for the Model B–Model A
+comparisons. (`results/dm_tests.csv` also contains the baseline comparisons for these two targets and all
+tests at h = 28; they are not interpreted in the paper.)
 
 ## Data
 
@@ -57,12 +60,12 @@ cancellation rate, quantity sold, revenue per customer (definitions in `protocol
 | Item | Setting |
 |---|---|
 | Frequency | daily, full 7-day calendar with zeros on non-trading days, seasonal period m = 7 |
-| Targets | revenue (primary); orders, active customers (secondary) |
+| Targets | revenue (primary); orders, active customers (secondary, Model B–Model A comparisons only) |
 | Horizons | 1, 7, 28 days, direct strategy (one model per horizon); significance only for h = 1 and 7, h = 28 descriptive |
 | Validation | expanding-window rolling origin, one forecast per target day; test period 2011-02-07 to 2011-12-08 (305 target days per horizon); identical target dates for all models |
 | Refit | statistical models at every origin; ML models weekly on all data up to the origin |
 | Metrics | MASE (primary; scale = in-sample MAE of seasonal naive lag 7 per origin), MAE, RMSE, WAPE |
-| Significance | Diebold-Mariano with Harvey-Leybourne-Newbold correction, squared-error loss (absolute error as robustness), Holm correction within families, alpha = 0.05 |
+| Significance | Diebold-Mariano with Harvey-Leybourne-Newbold correction, squared-error loss (absolute error as robustness), Holm correction within families, alpha = 0.05; tested comparisons: ML and ETS vs seasonal naive, ML vs ETS, SARIMA vs seasonal naive, Model B vs Model A (ML vs SARIMA is descriptive) |
 | Seed | 42 |
 
 **Model A**: own lags (h..h+6 plus the first four multiples of 7 that are >= h), rolling mean and standard
